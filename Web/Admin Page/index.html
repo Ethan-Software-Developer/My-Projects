@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Admin DashBoard || apexcharts | echart</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sider Bar -->
+      <div class="sidebar">
+        <ul>
+          <li class="logo">
+            <a href="#">
+              <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
+              <span class="title">DashBoard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-people"></i></span>
+              <span class="title">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-person"></i></span>
+              <span class="title">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-question-circle"></i></span>
+              <span class="title">Helper</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-gear"></i></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-info-circle"></i></span>
+              <span class="title">Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-card-list"></i></span>
+              <span class="title">Documents</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main">
+        <!-- Top bar -->
+        <div class="topbar">
+          <div class="left">
+            <div class="toggle">
+              <i class="bi bi-list"></i>
+            </div>
+            <div class="search">
+              <label>
+                <input type="text" placeholder="Search" />
+                <i class="bi bi-search"></i>
+              </label>
+            </div>
+          </div>
+          <div class="right">
+            <a href="#">
+              <i class="bi bi-bell"></i>
+              <span class="badgge">4</span>
+            </a>
+            <a href="#">
+              <i class="bi bi-chat-left-dots"></i>
+              <span class="badgge message">3</span>
+            </a>
+            <div class="user">
+              <img src="/admin-dashboard/team-max.png" alt="Max" />
+            </div>
+          </div>
+        </div>
+        <!-- Cards -->
+        <div class="cardBox">
+          <div class="card">
+            <div>
+              <div class="numbers">145</div>
+              <div class="cardName">Sales</div>
+            </div>
+            <div class="iconBx">
+              <i class="bi bi-cart"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="numbers">1244</div>
+              <div class="cardName">Customers</div>
+            </div>
+            <div class="iconBx">
+              <i class="bi bi-people"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="numbers">$3.264</div>
+              <div class="cardName">Revenue</div>
+            </div>
+            <div class="iconBx">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="numbers">64</div>
+              <div class="cardName">Complaints</div>
+            </div>
+            <div class="iconBx">
+              <i class="bi bi-headset"></i>
+            </div>
+          </div>
+        </div>
+        <!-- graphBox -->
+        <div class="graphBox">
+          <div class="box"><div id="reportsChart"></div></div>  
+          <div class="box">
+            <div
+              id="budgetChart"
+              style="min-height: 400px"
+              class="echart"
+            ></div>
+          </div>
+          <div class="box">
+            <div
+              id="trafficChart"
+              style="min-height: 400px"
+              class="echart"
+            ></div>
+          </div>
+        </div>
+        <div class="details">
+          <!-- Recent Sale's -->
+          <div class="recentSales">
+            <div class="cardHeader">
+              <h2>Recent Sales</h2>
+              <a href="#" class="btn">This Week</a>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>#</td>
+                  <td>Customers</td>
+                  <td>Product</td>
+                  <td>Price</td>
+                  <td>Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#2049</td>
+                  <td>Ashleigh Langosh</td>
+                  <td>Lorem ipsum dolor sit.</td>
+                  <td>$147</td>
+                  <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                  <th>#2457</th>
+                  <td>Brandon Jacob</td>
+                  <td>At Presentium minu</td>
+                  <td>$64</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <th>#2147</th>
+                  <td>Bridle Kesler</td>
+                  <td>Blanditiis dolor omnis similque</td>
+                  <td>$47</td>
+                  <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                  <th>#2644</th>
+                  <td>Angus Grady</td>
+                  <td>Ut voluptatem id earum et</td>
+                  <td>$67</td>
+                  <td><span class="status inprogress">In Progress</span></td>
+                </tr>
+                <tr>
+                  <th>#2782</th>
+                  <td>Raheem Lehner</td>
+                  <td>Sunt similique distinctio</td>
+                  <td>$165</td>
+                  <td><span class="status">Delivered</span></td>
+                </tr>
+                <tr>
+                  <th>#2835</th>
+                  <td>David Fan</td>
+                  <td>Lorem ipsum dolor</td>
+                  <td>$145</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                  <th>#2839</th>
+                  <td>Maxwell Johnson</td>
+                  <td>Fugiat voluptas vero</td>
+                  <td>$187</td>
+                  <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                  <th>#2910</th>
+                  <td>Martin Division</td>
+                  <td>Que enim quia</td>
+                  <td>$265</td>
+                  <td><span class="status inprogress">In Progress</span></td>
+                </tr>
+                <tr>
+                  <th>#2644</th>
+                  <td>Muhammad</td>
+                  <td>Sunt similique distinctio</td>
+                  <td>#383</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <th>#2644</th>
+                  <td>Mike Pham</td>
+                  <td>Odit ut eveniet</td>
+                  <td>$473</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <th>#2932</th>
+                  <td>Leo Yukio</td>
+                  <td>Atque cupiditate</td>
+                  <td>$674</td>
+                  <td><span class="status inprogress">In Progress</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Top Selling -->
+          <div class="topSelling">
+            <div class="cardHeader">
+              <h2>Top Selling</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>Photo</td>
+                  <td>Product</td>
+                  <td>Price</td>
+                  <td>Sold</td>
+                  <td>Revenue</td>
+                </tr>
+              </thead>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <img src="/admin-dashboard/product-1.jpg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <h4>Ut inventore ips <br /><span>FooterWear</span></h4>
+                </td>
+                <td>$64</td>
+                <td>124</td>
+                <td>$5.828</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <img src="/admin-dashboard/product-2.jpg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Excercitationem similique <br /><span>e-Devices</span>
+                  </h4>
+                </td>
+                <td>$46</td>
+                <td>98</td>
+                <td>$4.588</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <img src="/admin-dashboard/product-3.jpg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Doloibus nisi excercitationem<br /><span>Cosmetics</span>
+                  </h4>
+                </td>
+                <td>$59</td>
+                <td>74</td>
+                <td>$4.366</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <img src="/admin-dashboard/product-4.jpg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <h4>Officiis Quaerat sint<br /><span>e-Devices</span></h4>
+                </td>
+                <td>$46</td>
+                <td>98</td>
+                <td>$4.588</td>
+              </tr>
+
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <img src="/admin-dashboard/product-5.jpg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <h4>Sit undo debitis<br /><span>e-Devices</span></h4>
+                </td>
+                <td>$79</td>
+                <td>41</td>
+                <td>$</td>
+              </tr>
+            </table>
+          </div>
+          <footer>
+            <div class="footerContent">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>DStudio Tech</span></strong> All Right's Reserved
+                </div>
+                <div class="credits">
+                    Desighned by
+                    <a href="#">DSstudio Technology</a>
+                </div>
+            </div>
+          </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js" integrity="sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

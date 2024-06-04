@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+  --purple: #ce12fd;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --dark-grey: #99999;
+  --red: #ff4c28;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  background: url(/admin-dashboard/space-2.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: #dddddd;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.sidebar.active {
+  width: 80px;
+}
+
+.sidebar ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.hovered {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.sidebar ul li a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.hovered a {
+  color: var(--purple);
+}
+
+.sidebar ul li a .icon {
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.sidebar ul li a .icon i {
+  font-size: 1.5em;
+}
+
+.sidebar ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.sidebar ul li .logo {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+/* Main */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: transparent;
+  transition: 0.5s;
+  padding-top: 20px;
+}
+
+.main.active {
+  width: calc(100%-80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.topbar .left,
+.topbar .right {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.toggle i {
+  color: var(--white);
+}
+
+.search {
+  position: relative;
+  width: 500px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 50px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 40px;
+  font-size: 18px;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  color: var(--white);
+}
+
+.search label input::placeholder {
+  color: var(--white);
+}
+
+.search label i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  font-size: 1.2em;
+  color: var(--white);
+}
+
+.right {
+  position: relative;
+}
+
+.right a {
+  position: relative;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.right a i {
+  font-size: 2em;
+  margin-right: 30px;
+}
+
+.right a span {
+  position: absolute;
+  background: var(--purple);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  pad: 3px;
+  left: 30%;
+  top: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.right a span.message {
+  background: var(--red);
+}
+
+.user {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* CArd Box */
+
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5em;
+  color: var(--purple);
+}
+
+.cardBox .card .cardName {
+  color: var(--white);
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5em;
+  color: var(--white);
+}
+
+.cardBox .card:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName .cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+/* charts */
